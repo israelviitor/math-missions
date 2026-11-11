@@ -309,6 +309,10 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 }
 @media(prefers-reduced-motion:reduce) { .botao { transition: none; } .botao:hover { transform: none; } }
 
+.dobra .receba { display: grid; gap: 10px; }
+.dobra .receba .checks { grid-area: auto; }
+.receba-titulo { font-family: var(--display); font-size: 1.15rem; font-weight: 800; }
+@media (min-width: 900px) { .dobra .receba { grid-area: c; } }
 </style>
 </head>
 <body>
@@ -316,16 +320,18 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <div class="pre" data-bloco="01-dobra" data-t="01-dobra.00">Seu filho diz “sou ruim em matemática” e desiste antes de tentar?</div>
 <header class="faixa dobra" data-bloco="01-dobra">
 <div class="miolo">
-<h1 data-t="01-dobra.01">Destrave a matemática do seu filho com desenhos: <span class="q">conheça a abordagem do país nº 1 em matemática.</span></h1>
-<p class="sub" data-t="01-dobra.02">Ajude seu filho a trocar o “não consigo” por um jeito de entender: primeiro ele representa a situação, depois desenha e só então faz a conta. Você segue o Guia para Pais, e ele pratica em 30 missões de mistério para imprimir.</p>
+<h1 data-t="01-dobra.01"><span class="q">O segredo está nos desenhos:</span> descubra como o país nº 1 em matemática criou novos gênios.</h1>
+<p class="sub" data-t="01-dobra.02">Em Singapura, as crianças aprendem a representar os problemas com objetos e desenhos antes de chegar às contas. Com o Math Missions, você recebe o passo a passo dessa abordagem, acompanhado de 30 missões de mistério para ajudar seu filho a mudar a forma de ver a matemática.</p>
 <p class="dado" data-t="01-dobra.03"><span aria-hidden="true" class="barra"><i style="flex:3"></i><i style="flex:2"></i><i style="flex:1"></i></span><span>Singapura: 1º lugar em matemática no TIMSS 2023 e no PISA 2022</span></p>
 <div class="mock"><img alt="Guia do Método de Singapura para Pais na frente, uma missão e o Cartão do Desenho atrás" data-t="01-dobra.04" height="760" src="img/mockup-dobra.jpg" width="1000"/></div>
+<div class="receba">
+<p class="receba-titulo" data-t="01-dobra.10">Receba:</p>
 <ul class="checks">
-<li data-t="01-dobra.05">O “desenhe antes de calcular” que as escolas de Singapura usam desde os anos 80</li>
-<li data-t="01-dobra.06">Um caminho para enfrentar o “não sei”, o “sou ruim” e a vontade de desistir</li>
-<li data-t="01-dobra.07">Você não precisa saber matemática: o guia diz o que falar</li>
-<li data-t="01-dobra.08">Fora da tela, com cara de jogo</li>
+<li data-t="01-dobra.05"><b>30 missões prontas</b> para imprimir ou usar no tablet ou computador.</li>
+<li data-t="01-dobra.06"><b>3 níveis de dificuldade:</b> seu filho resolve os casos, e a dificuldade aumenta.</li>
+<li data-t="01-dobra.07"><b>Aplicação rápida:</b> gabarito comentado e roteiro de 2 minutos.</li>
 </ul>
+</div>
 <a class="botao" data-t="01-dobra.09" href="#prova">Veja como funciona</a>
 </div>
 </header>
