@@ -315,6 +315,44 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 @media (min-width: 900px) { .dobra .receba { grid-area: c; } }
 .dobra .mock.kit-mock { border: 0; background: transparent; box-shadow: none; border-radius: 0; overflow: visible; }
 .dobra .kit-mock img { aspect-ratio: auto; object-fit: contain; }
+
+/* Bônus: destaque editorial e cartões independentes, com áreas para mockups. */
+.bonus-section { background: #F7F1DD; border-top: 1px solid #E8DEBF; }
+.bonus-heading { max-width: 750px; margin: 0 auto 12px; text-align: center; display: grid; gap: 14px; }
+.bonus-heading h2 { max-width: none; }
+.bonus-heading>p:last-child { color: var(--suave); line-height: 1.65; }
+.bonus-card { min-width: 0; background: #fffefa; border: 1px solid #DFDCCF; border-radius: 20px; overflow: hidden; box-shadow: 0 9px 26px #142d4e08; display: flex; flex-direction: column; }
+.bonus-feature { display: grid; grid-template-columns: .85fr 1.15fr; border: 2px solid var(--amarelo); background: linear-gradient(120deg,#FFFDF6,#FFF5D2); }
+.bonus-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.bonus-art { position: relative; min-height: 190px; display: flex; align-items: center; justify-content: center; background: #EBF0F9; overflow: hidden; padding: 24px; }
+.bonus-feature .bonus-art { min-height: 270px; background: transparent; }
+.bonus-art-card { background: #FFF2B9; }
+.bonus-drawing-card { width: min(100%,280px); border: 2px solid var(--tinta); background: #fffefa; padding: 24px 20px; border-radius: 15px; box-shadow: 7px 7px 0 #F4C542; transform: rotate(-4deg); }
+.mini-bar { display: flex; width: 64px; height: 13px; border: 2px solid var(--tinta); border-radius: 3px; margin-bottom: 23px; }
+.mini-bar i { flex: 1; border-right: 2px solid var(--tinta); }.mini-bar i:last-child { border: 0; background: var(--amarelo); }
+.bonus-four { display: grid; grid-template-columns: repeat(4,1fr); gap: 9px; }.bonus-four span { display: grid; place-items: center; height: 40px; background: var(--tinta); color: #fff; border-radius: 8px; font: 800 1.1rem var(--display); }
+.bonus-mini-model { display: flex; height: 26px; margin-top: 23px; border: 2px solid var(--caneta); }.bonus-mini-model i { flex: 2; border-right: 2px solid var(--caneta); }.bonus-mini-model i:last-child { flex: 1; border: 0; background: var(--amarelo); }
+.bonus-copy { padding: 26px; display: flex; flex-direction: column; align-items: flex-start; gap: 15px; flex: 1; }
+.bonus-feature .bonus-copy { padding: 34px; justify-content: center; }
+.bonus-tag { display: inline-flex; border-radius: 100px; background: #FFF0B4; color: var(--tinta); padding: 7px 11px; font-size: .65rem; font-weight: 800; letter-spacing: .055em; line-height: 1.4; }
+.bonus-copy h3 { font-size: 1.3rem; line-height: 1.2; }.bonus-feature h3 { font-size: clamp(1.5rem,3vw,2rem); }
+.bonus-copy p { color: var(--suave); font-size: .94rem; line-height: 1.65; }
+.bonus-benefit { color: var(--verde); font-size: .78rem; font-weight: 700; margin-top: auto; padding-top: 5px; }
+.bonus-art-flash { background: #FFF0C9; flex-direction: column; gap: 10px; }
+.bonus-art-number { color: var(--tinta); font: 800 4.6rem/1 var(--display); letter-spacing: -.06em; }.bonus-art-number span { font: 700 1.2rem var(--texto); letter-spacing: 0; padding-left: 7px; }
+.bonus-flash-icon { position: absolute; top: 12px; left: 26px; color: #B58012; font-size: 55px; line-height: 1; }
+.bonus-flash-lines { display: flex; gap: 7px; }.bonus-flash-lines i { width: 26px; height: 5px; background: var(--amarelo); border-radius: 3px; }
+.bonus-art-agent { background: #E1ECE5; }.bonus-art-agent svg { height: 142px; width: 185px; }
+.bonus-art-map { background: #E3EBF8; }.bonus-map-grid { width: 200px; display: grid; grid-template-columns: repeat(6,1fr); gap: 8px; transform: rotate(-4deg); }.bonus-map-grid i { aspect-ratio: 1; background: #fffdf7; border: 1.5px solid #315CA8; border-radius: 6px; }.bonus-map-grid i.done { background: var(--amarelo); border-color: var(--tinta); }.bonus-map-flag { position: absolute; width: 30px; height: 36px; right: 20px; bottom: 20px; }
+.bonus-note { font-size: .83rem; text-align: center; color: var(--suave); }
+.bonus-cta { width: min(100%,400px); justify-self: center; background: var(--amarelo); color: var(--tinta); }
+@media(max-width:900px) { .bonus-grid { gap: 14px; }.bonus-copy { padding: 20px; }.bonus-copy h3 { font-size: 1.15rem; } }
+@media(max-width:700px) {
+.bonus-feature { grid-template-columns: 1fr; }.bonus-feature .bonus-art { min-height: 230px; }.bonus-feature .bonus-copy { padding: 24px; }
+.bonus-grid { grid-template-columns: 1fr; gap: 20px; }.bonus-art { min-height: 185px; }.bonus-copy { padding: 24px; }.bonus-copy h3 { font-size: 1.35rem; }
+.bonus-heading { text-align: left; margin-bottom: 4px; }.bonus-heading .rotulo { font-size: .68rem; }.bonus-feature h3 { font-size: 1.6rem; }
+}
+
 </style>
 </head>
 <body>
@@ -326,11 +364,12 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <p class="sub" data-t="01-dobra.02">Missões em que seu filho aprende com o país N1</p>
 <div class="mock kit-mock"><img alt="Kit digital Math Missions em inglês: Guia para Pais, três livros de missões, iPad, guia rápido e cartões de apoio" data-t="01-dobra.04" height="1024" src="img/math-missions-kit-en.webp" width="1536" fetchpriority="high"/></div>
 <div class="receba">
-<p class="receba-titulo" data-t="01-dobra.10">Receba:</p>
+<p class="receba-titulo" data-t="01-dobra.10">E ainda receba 4 bônus:</p>
 <ul class="checks">
-<li data-t="01-dobra.05"><b>30 missões prontas</b> para imprimir ou usar no tablet ou computador.</li>
-<li data-t="01-dobra.06"><b>3 níveis de dificuldade:</b> seu filho resolve os casos, e a dificuldade aumenta.</li>
-<li data-t="01-dobra.07"><b>Aplicação rápida:</b> gabarito comentado e roteiro de 2 minutos.</li>
+<li data-t="01-dobra.05"><b>Cartão do Desenho:</b> o método em 4 palavras para consultar na hora da lição.</li>
+<li data-t="01-dobra.06"><b>30 Desafios Relâmpago:</b> atividades de 5 minutos para praticar no dia a dia.</li>
+<li data-t="01-dobra.07"><b>Kit de Missão:</b> crachá de agente, ficha de pistas e certificado.</li>
+<li data-t="01-dobra.08"><b>Mapa de Domínio:</b> uma trilha para marcar as 30 missões e acompanhar o progresso.</li>
 </ul>
 </div>
 <a class="botao" data-t="01-dobra.09" href="#prova">Veja como funciona</a>
@@ -468,11 +507,68 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <div class="pilha">
 <div class="peca central"><img alt="Capa do Guia do Método de Singapura para Pais" data-t="10-pilha.02" loading="lazy" src="img/guia-capa.jpg"/><div><p class="selo-central" data-t="10-pilha.03">Peça central</p><p data-t="10-pilha.04"><b>Guia do Método de Singapura para Pais:</b> os 3 passos explicados em linguagem de casa, como desenhar cada tipo de problema em barras e o que dizer quando ele travar.</p></div></div>
 <div class="peca"><img alt="Página de uma missão" data-t="10-pilha.05" loading="lazy" src="img/c1-problema.jpg"/><p data-t="10-pilha.06"><b>30 Missões de Mistério</b>, cada uma com a etapa “desenhe o problema”</p></div>
-<div class="peca"><img alt="Cartão do Desenho" data-t="10-pilha.07" loading="lazy" src="img/c6-cartao.jpg"/><p data-t="10-pilha.08"><b>Cartão do Desenho</b> para imprimir: o roteiro do bar model em 4 palavras, para deixar na mesa na hora da lição</p></div>
 <div class="peca"><img alt="Página do adulto de uma missão" data-t="10-pilha.09" loading="lazy" src="img/roteiro-adulto.jpg"/><p data-t="10-pilha.10"><b>Roteiros para Pais:</b> a página “leia antes (2 minutos)” de cada missão, a pergunta de apoio e o gabarito com o erro comum</p></div>
 </div>
 </div>
 </section>
+
+<!-- BÔNUS: seção exclusiva; áreas visuais prontas para os mockups -->
+<section class="faixa bonus-section" data-bloco="10-bonus" id="bonus">
+<div class="miolo">
+<div class="bonus-heading">
+<p class="rotulo" data-t="10-bonus.01">4 bônus incluídos no seu kit</p>
+<h2 data-t="10-bonus.02">Mais apoio para você. Mais descobertas para seu filho.</h2>
+<p data-t="10-bonus.03">Além do Guia e das 30 Missões de Mistério, você recebe quatro materiais para orientar, praticar e celebrar cada etapa em casa.</p>
+</div>
+<article class="bonus-feature bonus-card" aria-labelledby="bonus-title-1">
+<div class="bonus-art bonus-art-card" aria-hidden="true">
+<div class="bonus-drawing-card">
+<div class="mini-bar"><i></i><i></i><i></i></div>
+<div class="bonus-four"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+<div class="bonus-mini-model"><i></i><i></i><i></i></div>
+</div>
+</div>
+<div class="bonus-copy">
+<span class="bonus-tag" data-t="10-bonus.04">BÔNUS 01 · CARTÃO PARA IMPRIMIR</span>
+<h3 id="bonus-title-1" data-t="10-bonus.05">Cartão do Desenho: o método inteiro em 4 palavras</h3>
+<p data-t="10-bonus.06">Deixe na mesa na hora da lição. Quando seu filho travar, o cartão ajuda a lembrar o caminho: ler, desenhar, calcular e conferir. Um apoio visual para consultar enquanto resolve.</p>
+<span class="bonus-benefit" data-t="10-bonus.07">✓ O próximo passo sempre à vista</span>
+</div>
+</article>
+<div class="bonus-grid">
+<article class="bonus-card" aria-labelledby="bonus-title-2">
+<div class="bonus-art bonus-art-flash" aria-hidden="true"><div class="bonus-flash-icon">ϟ</div><div class="bonus-art-number">5<span>min</span></div><div class="bonus-flash-lines"><i></i><i></i><i></i></div></div>
+<div class="bonus-copy">
+<span class="bonus-tag" data-t="10-bonus.08">BÔNUS 02 · 30 DESAFIOS</span>
+<h3 id="bonus-title-2" data-t="10-bonus.09">30 Desafios Relâmpago: 5 minutos por dia, sem tela</h3>
+<p data-t="10-bonus.10">Um mini-problema para desenhar e resolver antes do jantar ou em uma pausa da rotina. São 30 oportunidades de praticar o desenho antes da conta, em atividades rápidas.</p>
+<span class="bonus-benefit" data-t="10-bonus.11">✓ A prática cabe no dia a dia</span>
+</div>
+</article>
+<article class="bonus-card" aria-labelledby="bonus-title-3">
+<div class="bonus-art bonus-art-agent" aria-hidden="true"><svg viewBox="0 0 180 140" fill="none"><path d="M63 15L90 55L117 15" stroke="#142D4E" stroke-width="9" stroke-linecap="round"/><rect x="45" y="42" width="90" height="89" rx="12" fill="#FAF8F2" stroke="#142D4E" stroke-width="3"/><rect x="75" y="51" width="30" height="6" rx="3" fill="#F4C542"/><circle cx="90" cy="78" r="12" fill="#315CA8"/><path d="M69 107C71 88 109 88 111 107" fill="#315CA8"/><path d="M72 117H108" stroke="#142D4E" stroke-width="3" stroke-linecap="round"/></svg></div>
+<div class="bonus-copy">
+<span class="bonus-tag" data-t="10-bonus.12">BÔNUS 03 · KIT PARA IMPRIMIR</span>
+<h3 id="bonus-title-3" data-t="10-bonus.13">Kit de Missão: crachá de agente, ficha de pistas e certificado</h3>
+<p data-t="10-bonus.14">Entregue o crachá antes da primeira missão, registre as descobertas na ficha de pistas e celebre o caso resolvido com o certificado. Um convite para entrar no clima da investigação.</p>
+<span class="bonus-benefit" data-t="10-bonus.15">✓ Cada missão ganha uma história</span>
+</div>
+</article>
+<article class="bonus-card" aria-labelledby="bonus-title-4">
+<div class="bonus-art bonus-art-map" aria-hidden="true"><div class="bonus-map-grid"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><svg class="bonus-map-flag" viewBox="0 0 30 36" fill="none"><path d="M5 34V3H26L20 10L26 17H5" stroke="#142D4E" stroke-width="3" fill="#F4C542" stroke-linejoin="round"/></svg></div>
+<div class="bonus-copy">
+<span class="bonus-tag" data-t="10-bonus.16">BÔNUS 04 · MAPA PARA IMPRIMIR</span>
+<h3 id="bonus-title-4" data-t="10-bonus.17">Mapa de Domínio: para pendurar na geladeira</h3>
+<p data-t="10-bonus.18">Cada missão concluída ganha uma marca na trilha. Seu filho acompanha as próprias conquistas, e você tem um registro das atividades para conversar sobre o que ele aprendeu.</p>
+<span class="bonus-benefit" data-t="10-bonus.19">✓ As conquistas ficam visíveis</span>
+</div>
+</article>
+</div>
+<p class="bonus-note" data-t="10-bonus.20">Os quatro bônus acompanham o kit em arquivos digitais para imprimir em casa.</p>
+<a class="botao bonus-cta" href="#oferta" data-t="10-bonus.21">Quero o kit com os 4 bônus</a>
+</div>
+</section>
+
 <!-- 11. OFERTA -->
 <section class="faixa escura oferta" data-bloco="11-oferta" id="oferta">
 <div class="miolo">
@@ -481,7 +577,7 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <ul class="checks">
 <li data-t="11-oferta.02">Guia do Método de Singapura para Pais</li>
 <li data-t="11-oferta.03">30 Missões de Mistério</li>
-<li data-t="11-oferta.04">Cartão do Desenho</li>
+<li data-t="11-oferta.04">4 bônus: Cartão do Desenho, 30 Desafios Relâmpago, Kit de Missão e Mapa de Domínio</li>
 <li data-t="11-oferta.05">Roteiros para Pais</li>
 </ul>
 <div class="preco"><b data-t="11-oferta.06">US$ 17</b><span data-t="11-oferta.07">(dólar americano) · pagamento único</span></div>
