@@ -365,6 +365,9 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 .vitrine-setas button:hover { background: var(--amarelo); }
 .vitrine-setas button:focus-visible, .vitrine-missoes .trilho:focus-visible { outline: 3px solid var(--caneta); outline-offset: 3px; }
 @media(min-width:900px) { .vitrine-missoes .trilho { grid-auto-columns: calc((100% - 40px) / 3); } }
+
+.vitrine-missoes .trilho { scroll-snap-type: none; scroll-behavior: auto; }
+.vitrine-missoes .trilho figure { scroll-snap-align: none; }
 </style>
 </head>
 <body>
@@ -428,7 +431,7 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <figure><div class="moldura"><img alt="Mockup da missão O Mistério do Cofre de Pontos" loading="lazy" decoding="async" width="1254" height="1254" src="img/O%20miste%CC%81rio%20do%20cofre%20trancado.webp"/></div><figcaption><b>9</b><span>O Mistério do Cofre de Pontos<small>Trocas, comparação e antes e depois.</small></span></figcaption></figure>
 <figure><div class="moldura"><img alt="Mockup da missão O Grande Mistério da Estação Espacial" loading="lazy" decoding="async" width="1254" height="1254" src="img/Miste%CC%81rio%20na%20estac%CC%A7a%CC%83o%20espacial.webp"/></div><figcaption><b>10</b><span>O Grande Mistério da Estação Espacial<small>Frações do restante e partes desiguais.</small></span></figcaption></figure>
 </div>
-<div class="vitrine-navegacao"><p class="dica-trilho">Arraste para o lado e explore as 10 missões →</p><div class="vitrine-setas"><button type="button" aria-label="Ver missões anteriores" data-mission-direction="-1" aria-controls="vitrine-missoes">←</button><button type="button" aria-label="Ver próximas missões" data-mission-direction="1" aria-controls="vitrine-missoes">→</button></div></div>
+<div class="vitrine-navegacao"><p class="dica-trilho">Explore as 10 missões em rolagem contínua →</p><div class="vitrine-setas"><button type="button" aria-label="Ver missões anteriores" data-mission-direction="-1" aria-controls="vitrine-missoes">←</button><button type="button" aria-label="Ver próximas missões" data-mission-direction="1" aria-controls="vitrine-missoes">→</button></div></div>
 </div>
 </section>
 <!-- 4. MECANISMO -->
@@ -700,13 +703,47 @@ if (CONFIG.pixel) {
 }
 </script>
 <script>
-document.querySelectorAll('[data-mission-direction]').forEach(function(button) {
-  button.addEventListener('click', function() {
-    var track = document.getElementById('vitrine-missoes');
-    var card = track.querySelector('figure');
-    track.scrollBy({left: Number(button.dataset.missionDirection) * (card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap)), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+(function () {
+  var track = document.getElementById('vitrine-missoes');
+  if (!track) return;
+  var originals = Array.from(track.children);
+  originals.forEach(function (card) {
+    var copy = card.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    track.appendChild(copy);
   });
-});
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  var position = track.scrollLeft, last = 0, hover = false, touching = false, resumeAt = 0;
+  function cycleWidth() { return track.children[originals.length].offsetLeft - track.children[0].offsetLeft; }
+  function wrap(value) { var width = cycleWidth(); return width ? (value % width + width) % width : value; }
+  track.addEventListener('pointerenter', function (event) { if (event.pointerType === 'mouse') hover = true; });
+  track.addEventListener('pointerleave', function () { hover = false; });
+  track.addEventListener('pointerdown', function () { touching = true; });
+  window.addEventListener('pointerup', function () { if (touching) { touching = false; resumeAt = performance.now() + 2500; } });
+  window.addEventListener('pointercancel', function () { touching = false; resumeAt = performance.now() + 2500; });
+  track.addEventListener('wheel', function () { resumeAt = performance.now() + 2500; }, {passive: true});
+  track.addEventListener('keydown', function () { resumeAt = performance.now() + 3000; });
+  track.addEventListener('scroll', function () { position = track.scrollLeft; }, {passive: true});
+  document.querySelectorAll('[data-mission-direction]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var step = originals[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap);
+      position = wrap(track.scrollLeft + Number(button.dataset.missionDirection) * step);
+      track.scrollLeft = position;
+      resumeAt = performance.now() + 3000;
+    });
+  });
+  function animate(now) {
+    var elapsed = last ? Math.min(now - last, 50) : 0;
+    last = now;
+    if (!reduced.matches && !document.hidden && !hover && !touching && now >= resumeAt && document.activeElement !== track) {
+      position = wrap(position + elapsed * .035);
+      track.scrollLeft = position;
+      position = track.scrollLeft;
+    }
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+})();
 </script>
 </body>
 </html>
