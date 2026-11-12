@@ -368,6 +368,10 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 
 .vitrine-missoes .trilho { scroll-snap-type: none; scroll-behavior: auto; }
 .vitrine-missoes .trilho figure { scroll-snap-align: none; }
+
+/* Oculta a barra visual sem interromper a rolagem contínua. */
+.vitrine-missoes .trilho { scrollbar-width: none; -ms-overflow-style: none; }
+.vitrine-missoes .trilho::-webkit-scrollbar { display: none; width: 0; height: 0; }
 </style>
 </head>
 <body>
