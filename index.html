@@ -431,7 +431,7 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <figure><div class="moldura"><img alt="Mockup da missão O Mistério do Cofre de Pontos" loading="lazy" decoding="async" width="1254" height="1254" src="img/O%20miste%CC%81rio%20do%20cofre%20trancado.webp"/></div><figcaption><b>9</b><span>O Mistério do Cofre de Pontos<small>Trocas, comparação e antes e depois.</small></span></figcaption></figure>
 <figure><div class="moldura"><img alt="Mockup da missão O Grande Mistério da Estação Espacial" loading="lazy" decoding="async" width="1254" height="1254" src="img/Miste%CC%81rio%20na%20estac%CC%A7a%CC%83o%20espacial.webp"/></div><figcaption><b>10</b><span>O Grande Mistério da Estação Espacial<small>Frações do restante e partes desiguais.</small></span></figcaption></figure>
 </div>
-<div class="vitrine-navegacao"><p class="dica-trilho">Explore as 10 missões em rolagem contínua →</p><div class="vitrine-setas"><button type="button" aria-label="Ver missões anteriores" data-mission-direction="-1" aria-controls="vitrine-missoes">←</button><button type="button" aria-label="Ver próximas missões" data-mission-direction="1" aria-controls="vitrine-missoes">→</button></div></div>
+<div class="vitrine-navegacao"><p class="dica-trilho">Explore as 10 missões em rolagem contínua →</p></div>
 </div>
 </section>
 <!-- 4. MECANISMO -->
@@ -724,14 +724,6 @@ if (CONFIG.pixel) {
   track.addEventListener('wheel', function () { resumeAt = performance.now() + 2500; }, {passive: true});
   track.addEventListener('keydown', function () { resumeAt = performance.now() + 3000; });
   track.addEventListener('scroll', function () { position = track.scrollLeft; }, {passive: true});
-  document.querySelectorAll('[data-mission-direction]').forEach(function (button) {
-    button.addEventListener('click', function () {
-      var step = originals[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap);
-      position = wrap(track.scrollLeft + Number(button.dataset.missionDirection) * step);
-      track.scrollLeft = position;
-      resumeAt = performance.now() + 3000;
-    });
-  });
   function animate(now) {
     var elapsed = last ? Math.min(now - last, 50) : 0;
     last = now;
