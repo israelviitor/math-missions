@@ -353,6 +353,18 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 .bonus-heading { text-align: left; margin-bottom: 4px; }.bonus-heading .rotulo { font-size: .68rem; }.bonus-feature h3 { font-size: 1.6rem; }
 }
 
+
+/* Vitrine das dez missões */
+.vitrine-missoes .trilho { grid-auto-columns: min(86%, 400px); align-items: start; }
+.vitrine-missoes .moldura { padding: 0; height: auto; aspect-ratio: 1; border: 1px solid var(--linha); overflow: hidden; }
+.vitrine-missoes .moldura img { width: 100%; height: 100%; max-height: none; object-fit: contain; }
+.vitrine-missoes figcaption small { display: block; margin-top: 6px; color: var(--suave); font-size: .85rem; font-weight: 400; }
+.vitrine-navegacao { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.vitrine-setas { display: flex; gap: 8px; flex-shrink: 0; }
+.vitrine-setas button { width: 44px; height: 44px; border: 1px solid var(--tinta); border-radius: 50%; color: var(--tinta); background: var(--papel); font: 700 1.3rem var(--texto); cursor: pointer; }
+.vitrine-setas button:hover { background: var(--amarelo); }
+.vitrine-setas button:focus-visible, .vitrine-missoes .trilho:focus-visible { outline: 3px solid var(--caneta); outline-offset: 3px; }
+@media(min-width:900px) { .vitrine-missoes .trilho { grid-auto-columns: calc((100% - 40px) / 3); } }
 </style>
 </head>
 <body>
@@ -378,33 +390,45 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <!-- 2. DOR + INIMIGO -->
 <section class="faixa alt" data-bloco="02-dor">
 <div class="miolo estreito">
-<h2 data-t="02-dor.01">Toda noite, a mesma cena?</h2>
-<ul class="dor">
-<li data-t="02-dor.02">A folha de contas sai certinha. O problema escrito, não.</li>
-<li data-t="02-dor.03">“Não sei matemática.” “Sou ruim nisso.” “Não quero fazer.”</li>
-<li data-t="02-dor.04">Você explica do seu jeito e ouve “não é assim que a professora faz”.</li>
-<li data-t="02-dor.05">A lição termina em choro na mesa da cozinha, e às vezes o choro é dos dois.</li>
-<li data-t="02-dor.06">Ele já diz “sou ruim em matemática”.</li>
-</ul>
-<p class="virada" data-t="02-dor.07">Não é falta de capacidade. É o método. A folha de repetição ensina a <b>decorar e repetir</b>: a conta vem pronta, ele faz e passa para a próxima. Ninguém nunca mostrou o problema para ele.</p>
-<p class="contraste" data-t="02-dor.08">No ensino de matemática de Singapura, objetos e desenhos ajudam a tornar as ideias visíveis. Seu filho pode começar <b>desenhando o problema</b> para entender as relações antes de calcular.</p>
+<h2 data-t="02-dor.01">“Eu sou ruim em matemática.”</h2>
+<p data-t="02-dor.02">Às vezes, essa frase aparece antes mesmo de seu filho tentar.</p>
+<p data-t="02-dor.03">Ele olha a atividade, diz que não sabe e pede ajuda. Você tenta explicar, mostra como fazer… mas logo ouve: “Não entendi”.</p>
+<p data-t="02-dor.04">O que parecia uma tarefa simples vira uma negociação para começar — e uma frustração para os dois.</p>
+<p class="contraste" data-t="02-dor.05"><b>Você quer ajudar. Mas como explicar de outro jeito se também aprendeu decorando regras e repetindo contas?</b></p>
+</div>
+</section>
+<!-- A VIRADA: compreensão e autonomia progressiva -->
+<section class="faixa" data-bloco="02-virada">
+<div class="miolo estreito">
+<h2 data-t="02-virada.01">Antes de concluir que ele não consegue, mostre um jeito de enxergar.</h2>
+<p data-t="02-virada.02">Quando um problema aparece só em palavras e números, pode ser difícil entender por onde começar.</p>
+<p class="contraste" data-t="02-virada.03"><b>O desenho torna visível o que seu filho precisa descobrir.</b></p>
+<p data-t="02-virada.04">Ao representar as quantidades em barras, ele consegue ver as partes, comparar os valores e entender a relação entre eles antes de calcular.</p>
+<p data-t="02-virada.05">Essa é uma das ferramentas usadas no ensino de matemática de Singapura — e que você pode levar para a mesa de casa.</p>
+<p data-t="02-virada.06"><b>Com o Math Missions, seu filho coloca esse jeito de aprender em prática em 30 missões de mistério, com instruções para ler as pistas, desenhar os problemas e descobrir as respostas.</b></p>
+<p data-t="02-virada.07">Cada resposta revela uma letra da palavra-código. Se a palavra não fizer sentido, ele tem uma pista para voltar e conferir o próprio raciocínio.</p>
+<p class="contraste" data-t="02-virada.08"><b>Você ajuda a começar. Ele ganha espaço para descobrir, resolver e avançar com mais autonomia.</b></p>
+<p data-t="02-virada.09">E, quando precisar de uma mão, o Guia para Pais mostra como ajudar — sem precisar preparar aulas ou dominar matemática.</p>
 </div>
 </section>
 <!-- 3. PROVA DO PRODUTO -->
-<section class="faixa" data-bloco="03-prova" id="prova">
+<section class="faixa vitrine-missoes" data-bloco="03-prova" id="prova">
 <div class="miolo">
-<p class="rotulo" data-t="03-prova.01">Páginas reais do material</p>
-<h2 data-t="03-prova.02">Veja o desenho que muda tudo</h2>
-<div aria-label="Páginas do material, role para o lado" class="trilho" tabindex="0">
-<figure><div class="moldura"><img alt="Página da missão A Caça ao Tesouro do Acampamento" data-t="03-prova.03" loading="lazy" src="img/c1-problema.jpg"/></div><figcaption data-t="03-prova.04"><b>1</b>O problema escrito da missão</figcaption></figure>
-<figure><div class="moldura"><img alt="Etapa desenhe o problema, com a barra em branco" data-t="03-prova.05" loading="lazy" src="img/c2-desenhe.jpg"/></div><figcaption data-t="03-prova.06"><b>2</b>Passo 2: ele desenha o problema em barras</figcaption></figure>
-<figure><div class="moldura"><img alt="A mesma etapa resolvida: barra dividida em 35, 17 e ?, conta 60 − 35 − 17 = 8" data-t="03-prova.07" loading="lazy" src="img/c3-resolvida.jpg"/></div><figcaption data-t="03-prova.08"><b>3</b>Com o desenho, a conta fica à vista</figcaption></figure>
-<figure><div class="moldura"><img alt="Tabela da palavra-código com a palavra LAGO" data-t="03-prova.09" loading="lazy" src="img/c4-codigo.jpg"/></div><figcaption data-t="03-prova.10"><b>4</b>Cada resposta vira uma letra da palavra-código</figcaption></figure>
-<figure><div class="moldura"><img alt="Página do Guia com os desenhos em barra" data-t="03-prova.11" loading="lazy" src="img/c5-guia-barras.jpg"/></div><figcaption data-t="03-prova.12"><b>5</b>O Guia do Método: os 3 passos em linguagem de casa</figcaption></figure>
-<figure><div class="moldura"><img alt="Cartão do Desenho para imprimir" data-t="03-prova.13" loading="lazy" src="img/c6-cartao.jpg"/></div><figcaption data-t="03-prova.14"><b>6</b>O Cartão do Desenho para deixar na mesa</figcaption></figure>
-<figure><div class="moldura"><img alt="Gabarito explicado para o adulto" data-t="03-prova.15" loading="lazy" src="img/c7-gabarito.jpg"/></div><figcaption data-t="03-prova.16"><b>7</b>O gabarito explica cada conta e o erro mais comum</figcaption></figure>
+<p class="rotulo" data-t="03-prova.01">Conheça algumas das missões</p>
+<h2 data-t="03-prova.02">Uma missão para resolver. Um novo jeito de aprender matemática.</h2>
+<div aria-label="10 missões de mistério, role para o lado" class="trilho" id="vitrine-missoes" tabindex="0">
+<figure><div class="moldura"><img alt="Mockup da missão O Mistério dos Biscoitos Sumidos" loading="lazy" decoding="async" width="1254" height="1254" src="img/Miste%CC%81rio%20do%20biscoito%20desaparecido.webp"/></div><figcaption><b>1</b><span>O Mistério dos Biscoitos Sumidos<small>Grupos iguais, subtração e tempo.</small></span></figcaption></figure>
+<figure><div class="moldura"><img alt="Mockup da missão O Caso das Figurinhas Perdidas" loading="lazy" decoding="async" width="1254" height="1254" src="img/O%20caso%20dos%20adesivos%20desaparecidos.webp"/></div><figcaption><b>2</b><span>O Caso das Figurinhas Perdidas<small>Quantidades, partes e o que falta.</small></span></figcaption></figure>
+<figure><div class="moldura"><img alt="Mockup da missão O Segredo da Noite da Pizza de Sexta" loading="lazy" decoding="async" width="1254" height="1254" src="img/O%20Miste%CC%81rio%20da%20Pizza%20de%20Sexta-Feira.webp"/></div><figcaption><b>3</b><span>O Segredo da Noite da Pizza de Sexta<small>Metades, quartos e partes iguais.</small></span></figcaption></figure>
+<figure><div class="moldura"><img alt="Mockup da missão O Caso do Campeonato de Pipas" loading="lazy" decoding="async" width="1254" height="1254" src="img/Missa%CC%83o%20matema%CC%81tica_%20o%20miste%CC%81rio%20das%20pipas.webp"/></div><figcaption><b>4</b><span>O Caso do Campeonato de Pipas<small>Comprimentos, comparação e problemas de dois passos.</small></span></figcaption></figure>
+<figure><div class="moldura"><img alt="Mockup da missão A Caça ao Tesouro do Acampamento" loading="lazy" decoding="async" width="1254" height="1254" src="img/Missa%CC%83o%20matema%CC%81tica_%20cac%CC%A7a%20ao%20tesouro.webp"/></div><figcaption><b>5</b><span>A Caça ao Tesouro do Acampamento<small>Moedas do jogo, frações e divisão.</small></span></figcaption></figure>
+<figure><div class="moldura"><img alt="Mockup da missão O Caso do Aquário Vazando" loading="lazy" decoding="async" width="1254" height="1254" src="img/Miste%CC%81rio%20matema%CC%81tico%20do%20aqua%CC%81rio%20vazando.webp"/></div><figcaption><b>6</b><span>O Caso do Aquário Vazando<small>Litros, mililitros e diferenças.</small></span></figcaption></figure>
+<figure><div class="moldura"><img alt="Mockup da missão O Grande Mistério do Museu Noturno" loading="lazy" decoding="async" width="1254" height="1254" src="img/Miste%CC%81rio%20no%20museu%20a%CC%80%20meia-noite.webp"/></div><figcaption><b>7</b><span>O Grande Mistério do Museu Noturno<small>Frações, grupos iguais e divisão com resto.</small></span></figcaption></figure>
+<figure><div class="moldura"><img alt="Mockup da missão O Enigma do Robô Aspirador" loading="lazy" decoding="async" width="1254" height="1254" src="img/O%20miste%CC%81rio%20do%20robo%CC%82%20aspirador.webp"/></div><figcaption><b>8</b><span>O Enigma do Robô Aspirador<small>Área, proporção e frações.</small></span></figcaption></figure>
+<figure><div class="moldura"><img alt="Mockup da missão O Mistério do Cofre de Pontos" loading="lazy" decoding="async" width="1254" height="1254" src="img/O%20miste%CC%81rio%20do%20cofre%20trancado.webp"/></div><figcaption><b>9</b><span>O Mistério do Cofre de Pontos<small>Trocas, comparação e antes e depois.</small></span></figcaption></figure>
+<figure><div class="moldura"><img alt="Mockup da missão O Grande Mistério da Estação Espacial" loading="lazy" decoding="async" width="1254" height="1254" src="img/Miste%CC%81rio%20na%20estac%CC%A7a%CC%83o%20espacial.webp"/></div><figcaption><b>10</b><span>O Grande Mistério da Estação Espacial<small>Frações do restante e partes desiguais.</small></span></figcaption></figure>
 </div>
-<p class="dica-trilho" data-t="03-prova.17">Arraste para o lado para ver as 7 páginas →</p>
+<div class="vitrine-navegacao"><p class="dica-trilho">Arraste para o lado e explore as 10 missões →</p><div class="vitrine-setas"><button type="button" aria-label="Ver missões anteriores" data-mission-direction="-1" aria-controls="vitrine-missoes">←</button><button type="button" aria-label="Ver próximas missões" data-mission-direction="1" aria-controls="vitrine-missoes">→</button></div></div>
 </div>
 </section>
 <!-- 4. MECANISMO -->
@@ -674,6 +698,15 @@ if (CONFIG.pixel) {
     a.addEventListener('click', function () { if (CONFIG.checkout) fbq('track', 'InitiateCheckout', dados); });
   });
 }
+</script>
+<script>
+document.querySelectorAll('[data-mission-direction]').forEach(function(button) {
+  button.addEventListener('click', function() {
+    var track = document.getElementById('vitrine-missoes');
+    var card = track.querySelector('figure');
+    track.scrollBy({left: Number(button.dataset.missionDirection) * (card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap)), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+  });
+});
 </script>
 </body>
 </html>
