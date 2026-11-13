@@ -395,6 +395,12 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 .bonus-product-image { min-width:0; background:#FAF8F2; overflow:hidden; }
 .bonus-product-image img { display:block; width:100%; height:auto; aspect-ratio:1; object-fit:contain; }
 .bonus-feature .bonus-product-image { align-self:center; }
+
+/* Valores dos bônus acima de cada card */
+.bonus-price-banner { grid-column:1 / -1; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px 16px; padding:14px 18px; background:#FFFDF7; border-bottom:1px solid var(--linha); font-size:1.1rem; line-height:1.3; }
+.bonus-price-before { color:#C73535; text-decoration:line-through; text-decoration-thickness:2px; font-weight:700; }
+.bonus-price-banner strong { color:var(--verde); font-weight:800; }
+.bonus-feature .bonus-price-banner { margin-bottom:0; }
 </style>
 </head>
 <body>
@@ -583,6 +589,7 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <p data-t="10-bonus.03">Além do Guia e das 30 Missões de Mistério, você recebe quatro materiais para orientar, praticar e celebrar cada etapa em casa.</p>
 </div>
 <article class="bonus-feature bonus-card" aria-labelledby="bonus-title-1">
+<div class="bonus-price-banner"><span class="bonus-price-before">$9.90</span><strong>Today: FREE</strong></div>
 <div class="bonus-product-image"><img src="img/the-draw-it-card.webp?v=bonus-2" alt="The Draw-It Card: cartão com os quatro passos do método" width="1254" height="1254" loading="eager" decoding="async"/></div>
 <div class="bonus-copy">
 <span class="bonus-tag" data-t="10-bonus.04">BÔNUS 01 · CARTÃO PARA IMPRIMIR</span>
@@ -593,6 +600,7 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 </article>
 <div class="bonus-grid">
 <article class="bonus-card" aria-labelledby="bonus-title-2">
+<div class="bonus-price-banner"><span class="bonus-price-before">$12.90</span><strong>Today: FREE</strong></div>
 <div class="bonus-product-image"><img src="img/Baralho%20de%20desafios%20matema%CC%81ticos%20rela%CC%82mpago.webp?v=bonus-2" alt="30 Lightning Challenges: fichas de desafios de cinco minutos" width="1254" height="1254" loading="eager" decoding="async"/></div>
 <div class="bonus-copy">
 <span class="bonus-tag" data-t="10-bonus.08">BÔNUS 02 · 30 DESAFIOS</span>
@@ -602,6 +610,7 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 </div>
 </article>
 <article class="bonus-card" aria-labelledby="bonus-title-3">
+<div class="bonus-price-banner"><span class="bonus-price-before">$12.90</span><strong>Today: FREE</strong></div>
 <div class="bonus-product-image"><img src="img/mission-kit.webp?v=bonus-2" alt="Mission Kit: crachá, ficha de pistas e certificado" width="1254" height="1254" loading="eager" decoding="async"/></div>
 <div class="bonus-copy">
 <span class="bonus-tag" data-t="10-bonus.12">BÔNUS 03 · KIT PARA IMPRIMIR</span>
@@ -611,6 +620,7 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 </div>
 </article>
 <article class="bonus-card" aria-labelledby="bonus-title-4">
+<div class="bonus-price-banner"><span class="bonus-price-before">$14.90</span><strong>Today: FREE</strong></div>
 <div class="bonus-product-image"><img src="img/Mapa%20da%20maestria%20matema%CC%81tica.webp?v=bonus-2" alt="Mastery Map: trilha das 30 missões para acompanhar as conquistas" width="1254" height="1254" loading="eager" decoding="async"/></div>
 <div class="bonus-copy">
 <span class="bonus-tag" data-t="10-bonus.16">BÔNUS 04 · MAPA PARA IMPRIMIR</span>
