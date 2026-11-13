@@ -376,6 +376,20 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 /* Sequência visual Concreto → Desenho → Conta, sem arquivos de imagem. */
 [data-bloco="04-metodo"] .passo { grid-template-columns: minmax(0,1fr); align-content: start; gap: 18px; }
 [data-bloco="04-metodo"] .passo .metodo-visual { display: block; width: 100%; height: auto; max-width: 360px; margin-inline: auto; }
+
+/* Conteúdos compactos e resumo do kit */
+.conteudos-matematica { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 28px; }
+.conteudos-matematica li { position:relative; padding:14px 0 14px 24px; border-bottom:1px solid var(--linha); font-weight:500; line-height:1.45; }
+.conteudos-matematica li::before { content:""; position:absolute; left:0; top:22px; width:9px; height:9px; border-radius:2px; background:var(--amarelo); }
+.kit-resumo { display:grid; gap:28px; align-items:center; }
+.kit-resumo-imagem { min-width:0; }
+.kit-resumo-imagem img { width:100%; height:auto; }
+.kit-resumo-lista { list-style:none; padding:0; margin:0; display:grid; gap:24px; }
+.kit-resumo-lista li { padding-left:20px; border-left:3px solid var(--amarelo); }
+.kit-resumo-lista h3 { font-size:1.2rem; line-height:1.25; margin-bottom:8px; }
+.kit-resumo-lista p { color:var(--suave); line-height:1.6; }
+@media(min-width:900px) { .kit-resumo { grid-template-columns:1.15fr 1fr; gap:48px; } }
+@media(max-width:420px) { .conteudos-matematica { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -479,15 +493,9 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 </section>
 <!-- 6. AMPLITUDE -->
 <section class="faixa alt" data-bloco="06-amplitude">
-<div class="miolo">
-<div class="numeros">
-<div><b data-t="06-amplitude.01">1</b><span data-t="06-amplitude.02">Guia do Método</span></div>
-<div><b data-t="06-amplitude.03">30</b><span data-t="06-amplitude.04">missões</span></div>
-<div><b data-t="06-amplitude.05">3</b><span data-t="06-amplitude.06">passos: Concreto → Desenho → Conta</span></div>
-<div><b data-t="06-amplitude.07">4</b><span data-t="06-amplitude.08">etapas por missão, cada uma com espaço para desenhar o problema</span></div>
-<div class="largo"><b data-t="06-amplitude.09">20–35</b><span data-t="06-amplitude.10">minutos cada</span></div>
-</div>
-<div class="chips"><span data-t="06-amplitude.11">Soma e subtração</span><span data-t="06-amplitude.12">Multiplicação e divisão</span><span data-t="06-amplitude.13">Frações</span><span data-t="06-amplitude.14">Horas e tempo</span><span data-t="06-amplitude.15">Medidas</span><span data-t="06-amplitude.16">Tabelas</span><span data-t="06-amplitude.17">Dinheiro com moedas de ouro do jogo</span></div>
+<div class="miolo estreito">
+<h2 data-t="06-amplitude.18">O que seu filho vai praticar</h2>
+<ul class="conteudos-matematica"><li data-t="06-amplitude.11">Soma e subtração</li><li data-t="06-amplitude.12">Multiplicação e divisão</li><li data-t="06-amplitude.13">Frações</li><li data-t="06-amplitude.14">Horas e tempo</li><li data-t="06-amplitude.15">Medidas</li><li data-t="06-amplitude.16">Tabelas</li><li data-t="06-amplitude.17">Dinheiro com moedas de ouro do jogo</li></ul>
 </div>
 </section>
 <!-- 7. ROTINA -->
@@ -548,12 +556,15 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 </div>
 </section>
 <section class="faixa alt" data-bloco="10-pilha">
-<div class="miolo estreito">
+<div class="miolo">
 <h2 data-t="10-pilha.01">Tudo o que você recebe</h2>
-<div class="pilha">
-<div class="peca central"><img alt="Capa do Guia do Método de Singapura para Pais" data-t="10-pilha.02" loading="lazy" src="img/guia-capa.jpg"/><div><p class="selo-central" data-t="10-pilha.03">Peça central</p><p data-t="10-pilha.04"><b>Guia do Método de Singapura para Pais:</b> os 3 passos explicados em linguagem de casa, como desenhar cada tipo de problema em barras e o que dizer quando ele travar.</p></div></div>
-<div class="peca"><img alt="Página de uma missão" data-t="10-pilha.05" loading="lazy" src="img/c1-problema.jpg"/><p data-t="10-pilha.06"><b>30 Missões de Mistério</b>, cada uma com a etapa “desenhe o problema”</p></div>
-<div class="peca"><img alt="Página do adulto de uma missão" data-t="10-pilha.09" loading="lazy" src="img/roteiro-adulto.jpg"/><p data-t="10-pilha.10"><b>Roteiros para Pais:</b> a página “leia antes (2 minutos)” de cada missão, a pergunta de apoio e o gabarito com o erro comum</p></div>
+<div class="kit-resumo">
+<div class="kit-resumo-imagem"><img src="img/math-missions-kit-en.webp" alt="Kit digital Math Missions com livros de missões e materiais de apoio" width="1536" height="1024" loading="lazy" decoding="async"/></div>
+<ul class="kit-resumo-lista">
+<li><h3 data-t="10-pilha.11">30 Missões de Mistério em 3 níveis</h3><p data-t="10-pilha.12">Pistas, desenhos e palavras-código, organizados por dificuldade para começar pelo que seu filho já sabe.</p></li>
+<li><h3 data-t="10-pilha.13">Guia de apoio para os pais</h3><p data-t="10-pilha.14">O método explicado em linguagem simples para consultar quando precisar ajudar.</p></li>
+<li><h3 data-t="10-pilha.15">Roteiros e gabaritos comentados</h3><p data-t="10-pilha.16">Orientações rápidas e respostas explicadas para apoiar a prática sem preparar aulas.</p></li>
+</ul>
 </div>
 </div>
 </section>
