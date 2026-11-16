@@ -430,6 +430,15 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 @media(max-width:699px) { .singapore-proof { grid-template-columns:1fr; gap:20px; padding:24px; } .singapore-pillars { grid-template-columns:1fr; gap:14px; } .singapore-pillars article { padding:22px; } .singapore-bridge { padding:22px; } }
 
 .oferta .oferta-kit-completo img { aspect-ratio: 3 / 2; width:100%; height:auto; object-fit:contain; }
+
+.singapore-history { padding:clamp(22px,4vw,36px); background:#fff; border:1px solid var(--linha); border-radius:20px; display:grid; gap:18px; }
+.singapore-history>p:first-child { color:var(--suave); }
+.singapore-history h3 { max-width:42ch; font-size:clamp(1.4rem,3vw,1.9rem); line-height:1.25; }
+.singapore-medals { display:flex; flex-wrap:wrap; gap:14px 24px; list-style:none; padding:0; margin:4px 0; }
+.singapore-medals li { display:grid; gap:6px; text-align:center; min-width:64px; }
+.singapore-medals li span { font-size:2rem; line-height:1.2; }
+.singapore-medals strong { font-size:.95rem; }
+.singapore-history .singapore-history-source { font-size:.75rem; line-height:1.6; color:var(--suave); max-width:90ch; }
 </style>
 </head>
 <body>
@@ -467,6 +476,14 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <div class="miolo">
 <div class="singapore-heading"><p class="rotulo">Por que Singapura?</p>
 <h2 data-t="02-virada.01">O que Singapura faz para se tornar o país com o maior nível de matemática?</h2></div>
+<div class="singapore-history">
+<p>Uma das principais avaliações internacionais de matemática acontece a cada 4 anos.</p>
+<h3>Singapura ficou em 1º lugar em 6 das 7 edições avaliadas entre 1995 e 2023.</h3>
+<ul class="singapore-medals" aria-label="Histórico de posições de Singapura no TIMSS">
+<li><span aria-label="Primeiro lugar">🥇</span><strong>1995</strong></li><li><span aria-label="Primeiro lugar">🥇</span><strong>2003</strong></li><li><span aria-label="Segundo lugar">🥈</span><strong>2007</strong></li><li><span aria-label="Primeiro lugar">🥇</span><strong>2011</strong></li><li><span aria-label="Primeiro lugar">🥇</span><strong>2015</strong></li><li><span aria-label="Primeiro lugar">🥇</span><strong>2019</strong></li><li><span aria-label="Primeiro lugar">🥇</span><strong>2023</strong></li>
+</ul>
+<p class="singapore-history-source">TIMSS — Trends in International Mathematics and Science Study. Resultados de matemática do 4º ano. Fonte: IEA / TIMSS &amp; PIRLS International Study Center.</p>
+</div>
 <div class="singapore-pillars">
 <article><span class="singapore-number" aria-hidden="true">01</span><h3>Compreender antes de aplicar regras</h3><p>Objetos e representações visuais ajudam a construir o significado dos conceitos, antes de trabalhar apenas com números e símbolos.</p></article>
 <article><span class="singapore-number" aria-hidden="true">02</span><h3>Tornar o raciocínio visível</h3><p>Desenhos em barras ajudam a representar quantidades e relações, para entender o que o problema está pedindo.</p></article>
