@@ -470,6 +470,9 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 
 .hero-credibility { width:fit-content; max-width:100%; display:block; padding:7px 11px; border:1px solid #E3CD83; border-radius:999px; background:#FFF5D6; color:var(--tinta); font-size:.72rem; font-weight:700; line-height:1.4; }
 @media(min-width:900px) { .dobra .miolo { grid-template-areas:"cred m" "h m" "s m" "d m" "c m" "b m"; } .hero-credibility { grid-area:cred; } }
+.hero-cta { display:grid; gap:12px; width:100%; }
+.hero-cta-note { margin:0; text-align:center; font-size:.75rem; line-height:1.45; color:var(--suave); }
+@media(min-width:900px) { .dobra .hero-cta { grid-area:b; max-width:380px; } .dobra .hero-cta .botao { grid-area:auto; width:100%; } }
 </style>
 </head>
 <body>
@@ -488,7 +491,10 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <li data-t="01-dobra.07"><b>30 missões em 3 níveis:</b> começa pelo que ele já sabe, sem tela.</li>
 </ul>
 </div>
-<a class="botao" data-t="01-dobra.09" href="#prova">Veja como funciona</a>
+<div class="hero-cta">
+<a class="botao" data-t="01-dobra.09" href="#oferta">Quero o método e as missões</a>
+<p class="hero-cta-note" data-t="01-dobra.12">Kit digital + 4 bônus · US$ 17 · Garantia de 30 dias</p>
+</div>
 </div>
 </header>
 <!-- 2. DOR + INIMIGO -->
