@@ -439,6 +439,22 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 .singapore-medals li span { font-size:2rem; line-height:1.2; }
 .singapore-medals strong { font-size:.95rem; }
 .singapore-history .singapore-history-source { font-size:.75rem; line-height:1.6; color:var(--suave); max-width:90ch; }
+
+/* Histórico TIMSS com foco em leitura no celular. */
+.singapore-history { padding:28px 20px 22px; gap:20px; border:1px solid #142D4E18; border-top:4px solid var(--amarelo); border-radius:18px; background:#fff; overflow:hidden; }
+.singapore-history .history-eyebrow { margin:0; font-size:.67rem; font-weight:800; letter-spacing:.12em; line-height:1.5; color:var(--caneta); text-align:center; }
+.singapore-history h3 { max-width:none; display:grid; gap:5px; text-align:center; line-height:1.1; }
+.history-main { font-size:clamp(3.1rem,13vw,4.8rem); color:var(--tinta); letter-spacing:-.055em; }
+.history-sub { font:500 clamp(1.1rem,4.8vw,1.45rem)/1.4 var(--texto); letter-spacing:0; color:var(--suave); }
+.history-sub b { color:var(--caneta); font-weight:800; }
+.singapore-history .history-context { max-width:54ch; margin:0 auto; text-align:center; font-size:.92rem; line-height:1.65; color:var(--suave); }
+.singapore-history .singapore-medals { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:0; padding:0; }
+.singapore-history .singapore-medals li { min-width:0; padding:12px 4px; background:#FAF8F2; border:1px solid #142D4E0D; border-radius:10px; gap:7px; }
+.singapore-history .singapore-medals li span { font-size:1.6rem; line-height:1.1; }
+.singapore-history .singapore-medals strong { font-size:.78rem; letter-spacing:.02em; }
+.singapore-history .singapore-medals li:last-child { grid-column:span 2; background:#FFF4CF; border-color:#F4C54266; }
+.singapore-history .singapore-history-source { margin:0; padding-top:16px; border-top:1px solid var(--linha); font-size:.65rem; line-height:1.65; color:var(--suave); }
+@media(min-width:700px) { .singapore-history { padding:32px; } .singapore-history .singapore-medals { grid-template-columns:repeat(7,minmax(0,1fr)); max-width:760px; width:100%; margin-inline:auto; } .singapore-history .singapore-medals li:last-child { grid-column:auto; } }
 </style>
 </head>
 <body>
@@ -477,8 +493,9 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <div class="singapore-heading"><p class="rotulo">Por que Singapura?</p>
 <h2 data-t="02-virada.01">O que Singapura faz para se tornar o país com o maior nível de matemática?</h2></div>
 <div class="singapore-history">
-<p>Uma das principais avaliações internacionais de matemática acontece a cada 4 anos.</p>
-<h3>Singapura ficou em 1º lugar em 6 das 7 edições avaliadas entre 1995 e 2023.</h3>
+<p class="history-eyebrow">RESULTADOS INTERNACIONAIS · TIMSS</p>
+<h3><span class="history-main">1º lugar</span><span class="history-sub">em <b>6 de 7</b> edições</span></h3>
+<p class="history-context">De 1995 a 2023, Singapura liderou repetidamente uma das principais avaliações internacionais de matemática, realizada a cada 4 anos.</p>
 <ul class="singapore-medals" aria-label="Histórico de posições de Singapura no TIMSS">
 <li><span aria-label="Primeiro lugar">🥇</span><strong>1995</strong></li><li><span aria-label="Primeiro lugar">🥇</span><strong>2003</strong></li><li><span aria-label="Segundo lugar">🥈</span><strong>2007</strong></li><li><span aria-label="Primeiro lugar">🥇</span><strong>2011</strong></li><li><span aria-label="Primeiro lugar">🥇</span><strong>2015</strong></li><li><span aria-label="Primeiro lugar">🥇</span><strong>2019</strong></li><li><span aria-label="Primeiro lugar">🥇</span><strong>2023</strong></li>
 </ul>
