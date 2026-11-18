@@ -473,6 +473,27 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 .hero-cta { display:grid; gap:12px; width:100%; }
 .hero-cta-note { margin:0; text-align:center; font-size:.75rem; line-height:1.45; color:var(--suave); }
 @media(min-width:900px) { .dobra .hero-cta { grid-area:b; max-width:380px; } .dobra .hero-cta .botao { grid-area:auto; width:100%; } }
+
+/* Planos: Premium em destaque e Básico essencial */
+.oferta .plano-premium { border:3px solid var(--amarelo); }
+.plano-cabecalho { display:grid; gap:10px; grid-column:1/-1; }
+.plano-cabecalho h2 { font-size:clamp(2rem,7vw,2.6rem); }
+.plano-cabecalho p { color:var(--suave); }
+.plano-destaque { width:fit-content; background:var(--amarelo); color:var(--tinta); padding:7px 12px; border-radius:8px; font-size:.72rem; font-weight:800; letter-spacing:.05em; }
+.oferta .plano-premium .botao.compra { background:#169449; color:white; border-color:#147538; box-shadow:0 4px 0 #0c542a; }
+.oferta .plano-premium .botao.compra:hover { background:#117d3d; }
+.plano-basico { display:grid; gap:20px; width:100%; max-width:720px; margin:26px auto 0; padding:clamp(22px,5vw,36px); border:1px solid #d7d9df; border-radius:22px; background:#fff; color:#626b7b; box-shadow:0 8px 26px #00000009; }
+.plano-basico h2 { color:#253252; font-size:2rem; }
+.plano-rotulo { font-weight:800; font-size:.73rem; letter-spacing:.14em; color:#808592; }
+.basico-preco { display:grid; gap:5px; }
+.basico-preco strong { font:800 clamp(2.6rem,10vw,3.5rem)/1.1 var(--display); color:#596272; letter-spacing:-.04em; }
+.basico-preco span,.basico-nota { font-size:.9rem; color:#7b8290; }
+.plano-basico .checks { gap:12px; }
+.plano-basico .checks li::before { color:#8b978d; }
+.plano-basico .basico-botao { background:#f2f3f5; color:#626b77; border:1px solid #d6dae1; box-shadow:none; font-size:.95rem; }
+.plano-basico .basico-botao:hover { background:#e7eaee; }
+@media(min-width:900px) { .oferta .plano-premium .mock { grid-row:2/span 5; } }
+
 </style>
 </head>
 <body>
@@ -692,7 +713,8 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <!-- 11. OFERTA -->
 <section class="faixa escura oferta" data-bloco="11-oferta" id="oferta">
 <div class="miolo">
-<div class="cartao">
+<div class="cartao plano-premium">
+<div class="plano-cabecalho"><span class="plano-destaque">KIT COMPLETO · MELHOR OPÇÃO</span><h2>PREMIUM</h2><p>O método, as 30 missões e os 4 bônus para praticar e evoluir.</p></div>
 <div class="mock oferta-kit-completo"><img alt="Kit completo Math Missions: 30 missões em três níveis, guia para pais, roteiros, gabaritos e quatro bônus" data-t="11-oferta.01" width="1536" height="1024" loading="lazy" decoding="async" src="img/optimized/math-missions-16.webp"/></div>
 <ul class="checks">
 <li data-t="11-oferta.02">Guia do Método de Singapura para Pais</li>
@@ -702,9 +724,22 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 </ul>
 <div class="preco"><b data-t="11-oferta.06">US$ 17</b><span data-t="11-oferta.07">(dólar americano) · pagamento único</span></div>
 <p class="ancora" data-t="11-oferta.08">Menos do que uma hora de reforço particular.</p>
-<a class="botao compra checkout" data-t="11-oferta.09" href="#oferta" id="checkout">Quero o método e as missões</a>
-<div class="selos"><span data-t="11-oferta.10">Pagamento seguro</span><span data-t="11-oferta.11">Acesso imediato</span><span data-t="11-oferta.12">Cartão e PayPal</span></div>
+<a class="botao compra checkout" data-t="11-oferta.09" href="#oferta" id="checkout" data-plan="premium" data-value="17">QUERO O PREMIUM COMPLETO</a>
+<div class="selos"><span data-t="11-oferta.10">Pagamento seguro</span><span data-t="11-oferta.11">Acesso imediato</span><span data-t="11-oferta.12">Garantia de 30 dias</span></div>
 </div>
+<article class="plano-basico" aria-labelledby="titulo-basico">
+<p class="plano-rotulo">OPÇÃO ESSENCIAL</p>
+<h2 id="titulo-basico">BÁSICO</h2>
+<p>As 30 missões prontas para seu filho praticar matemática.</p>
+<div class="basico-preco"><strong>US$ 9,90</strong><span>Pagamento único</span></div>
+<ul class="checks">
+<li>30 missões em PDF, organizadas em 3 níveis</li>
+<li>10 missões por nível de dificuldade</li>
+<li>Gabaritos comentados e roteiros de aplicação</li>
+</ul>
+<p class="basico-nota">Sem o Guia para Pais e os 4 bônus do PREMIUM.</p>
+<a class="botao checkout basico-botao" href="#oferta" id="checkout-basico" data-plan="basic" data-value="9.90">ESCOLHER BÁSICO</a>
+</article>
 </div>
 </section>
 <!-- 12. PROVA SOCIAL: vazio até haver avaliações reais -->
@@ -762,17 +797,20 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <script>
 // ===== CONFIGURAÇÃO (preencher antes de publicar) =====
 var CONFIG = {
-  checkout: '',  // COLE AQUI o link do checkout em dólar (US$ 17), entre as aspas
+  checkout: '',
+  checkoutBasic: '',  // COLE AQUI o link do checkout em dólar (US$ 17), entre as aspas
   pixel: ''      // COLE AQUI o ID do Pixel do Meta (só números), entre as aspas
 };
 
 // Repasse de UTMs: utm_*, src, sck e fbclid da URL da página vão para o botão do checkout.
 // Só o botão da oferta (classe "checkout") vai ao checkout. Sem link preenchido, ele fica na própria oferta.
 (function () {
-  if (!CONFIG.checkout) return;
+  if (!CONFIG.checkout && !CONFIG.checkoutBasic) return;
   var aqui = new URLSearchParams(location.search);
   document.querySelectorAll('a.checkout').forEach(function (a) {
-    var url = new URL(CONFIG.checkout);
+    var destination = a.dataset.plan === 'basic' ? CONFIG.checkoutBasic : CONFIG.checkout;
+    if (!destination) return;
+    var url = new URL(destination);
     aqui.forEach(function (v, k) {
       if (/^utm_/.test(k) || k === 'src' || k === 'sck' || k === 'fbclid') url.searchParams.set(k, v);
     });
@@ -791,7 +829,10 @@ if (CONFIG.pixel) {
     if (!visto && es[0].isIntersecting) { visto = true; fbq('track', 'ViewContent', dados); }
   }).observe(oferta);
   document.querySelectorAll('a.checkout').forEach(function (a) {
-    a.addEventListener('click', function () { if (CONFIG.checkout) fbq('track', 'InitiateCheckout', dados); });
+    a.addEventListener('click', function () {
+      var destination = a.dataset.plan === 'basic' ? CONFIG.checkoutBasic : CONFIG.checkout;
+      if (destination) fbq('track', 'InitiateCheckout', {content_name:'Math Missions ' + (a.dataset.plan || 'premium'), value:Number(a.dataset.value || 17), currency:'USD'});
+    });
   });
 }
 </script>
