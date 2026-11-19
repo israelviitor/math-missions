@@ -507,6 +507,8 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 </style>
 </head>
 <body>
+<!-- Meta Pixel fallback for browsers with JavaScript disabled -->
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1096435480090794&amp;ev=PageView&amp;noscript=1"/></noscript>
 <!-- 1. PRIMEIRA DOBRA -->
 <div class="pre" data-bloco="01-dobra" data-t="01-dobra.00">Does your child say “I’m bad at math” and give up before even trying?</div>
 <header class="faixa dobra" data-bloco="01-dobra">
@@ -802,7 +804,7 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 var CONFIG = {
   checkout: 'https://pay.kiwify.com/1d2HLU9',
   checkoutBasic: 'https://pay.kiwify.com/xZV7JPe',  // COLE AQUI o link do checkout em dólar (US$ 17), entre as aspas
-  pixel: ''      // COLE AQUI o ID do Pixel do Meta (só números), entre as aspas
+  pixel: '1096435480090794'      // COLE AQUI o ID do Pixel do Meta (só números), entre as aspas
 };
 
 // Repasse de UTMs: utm_*, src, sck e fbclid da URL da página vão para o botão do checkout.
