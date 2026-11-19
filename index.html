@@ -507,6 +507,8 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 </style>
 </head>
 <body>
+<!-- Meta Pixel fallback for browsers with JavaScript disabled -->
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2229100660976879&amp;ev=PageView&amp;noscript=1"/></noscript>
 <!-- 1. PRIMEIRA DOBRA -->
 <div class="pre" data-bloco="01-dobra" data-t="01-dobra.00">Does your child say “I’m bad at math” and give up before even trying?</div>
 <header class="faixa dobra" data-bloco="01-dobra">
@@ -524,7 +526,6 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 </div>
 <div class="hero-cta">
 <a class="botao" data-t="01-dobra.09" href="#oferta">Get the Method and Missions</a>
-<p class="hero-cta-note" data-t="01-dobra.12">Digital kit + 4 bonuses · $17 · 30-day money-back guarantee</p>
 </div>
 </div>
 </header>
@@ -731,7 +732,7 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 </ul>
 <div class="premium-preco-oferta"><p class="premium-preco-anterior"><s>$60.50</s></p><div class="preco"><b data-t="11-oferta.06">$17</b><span data-t="11-oferta.07">USD · One-time payment</span></div></div>
 <p class="ancora" data-t="11-oferta.08">Less than an hour of private tutoring.</p>
-<a class="botao compra checkout" data-t="11-oferta.09" href="#oferta" id="checkout" data-plan="premium" data-value="17">GET THE COMPLETE PREMIUM KIT</a>
+<a class="botao compra checkout" data-t="11-oferta.09" href="https://pay.kiwify.com/1d2HLU9" id="checkout" data-plan="premium" data-value="17">GET THE COMPLETE PREMIUM KIT</a>
 <div class="selos"><span data-t="11-oferta.10">Secure Payment</span><span data-t="11-oferta.11">Instant Access</span><span data-t="11-oferta.12">30-Day Money-Back Guarantee</span></div>
 </div>
 <article class="plano-basico" aria-labelledby="titulo-basico">
@@ -745,7 +746,7 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <li>Explained answer keys and quick-start instructions</li>
 </ul>
 <p class="basico-nota">Does not include the Parent Guide or the 4 PREMIUM bonuses.</p>
-<a class="botao checkout basico-botao" href="#oferta" id="checkout-basico" data-plan="basic" data-value="9.90">CHOOSE BASIC</a>
+<a class="botao checkout basico-botao" href="https://pay.kiwify.com/xZV7JPe" id="checkout-basico" data-plan="basic" data-value="9.90">CHOOSE BASIC</a>
 </article>
 </div>
 </section>
@@ -800,9 +801,9 @@ details p { padding: 0 20px 20px; line-height: 1.65; }
 <script>
 // ===== CONFIGURAÇÃO (preencher antes de publicar) =====
 var CONFIG = {
-  checkout: '',
-  checkoutBasic: '',  // COLE AQUI o link do checkout em dólar (US$ 17), entre as aspas
-  pixel: ''      // COLE AQUI o ID do Pixel do Meta (só números), entre as aspas
+  checkout: 'https://pay.kiwify.com/1d2HLU9',
+  checkoutBasic: 'https://pay.kiwify.com/xZV7JPe',  // COLE AQUI o link do checkout em dólar (US$ 17), entre as aspas
+  pixel: '2229100660976879'      // COLE AQUI o ID do Pixel do Meta (só números), entre as aspas
 };
 
 // Repasse de UTMs: utm_*, src, sck e fbclid da URL da página vão para o botão do checkout.
